@@ -1,333 +1,37 @@
-/* --- Сброс стилей и базовые переменные --- */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
+/* Переопределение глобальных CSS-переменных Bootstrap 5 */
 :root {
-    --primary-color: #2e7d32;
-    --primary-hover: #1b5e20;
-    --text-color: #333333;
-    --bg-light: #f4f8f5;
-    --white: #ffffff;
-    --border-color: #e0e0e0;
-    --font-family: Arial, Helvetica, sans-serif;
+    --bs-primary: #2e7d32;
+    --bs-primary-rgb: 46, 125, 50;
+    --bs-success: #2e7d32;
+    --bs-success-rgb: 46, 125, 50;
+    --bs-font-sans-serif: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    --bs-body-bg: #ffffff;
+    --bs-body-color: #2b2b2b;
 }
 
-html {
-    scroll-behavior: smooth;
+/* Переопределение системных CSS-переменных для компонентов */
+.btn-success {
+    --bs-btn-bg: #2e7d32;
+    --bs-btn-border-color: #2e7d32;
+    --bs-btn-hover-bg: #1b5e20;
+    --bs-btn-hover-border-color: #1b5e20;
+    --bs-btn-active-bg: #1b5e20;
 }
 
-body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    line-height: 1.6;
-    background-color: var(--white);
+.btn-outline-success {
+    --bs-btn-color: #2e7d32;
+    --bs-btn-border-color: #2e7d32;
+    --bs-btn-hover-bg: #2e7d32;
+    --bs-btn-hover-border-color: #2e7d32;
+    --bs-btn-active-bg: #1b5e20;
 }
 
-.container {
-    width: 100%;
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 0 20px;
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: #f4f8f5 !important;
 }
 
-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-}
-
-/* --- Заголовки --- */
-h1 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-    line-height: 1.2;
-}
-
-h2 {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-h3 {
-    font-size: 1.3rem;
-    margin-bottom: 10px;
-}
-
-/* --- Кнопки --- */
-.btn {
-    display: inline-block;
-    background-color: var(--primary-color);
-    color: var(--white);
-    padding: 12px 28px;
-    border-radius: 6px;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-    background-color: var(--primary-hover);
-}
-
-/* --- Шапка (Header) --- */
-.header {
-    background-color: var(--white);
-    border-bottom: 1px solid var(--border-color);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-}
-
-.header-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    gap: 10px;
-}
-
-.logo-img {
-    width: 36px;
-    height: 36px;
-}
-
-.logo-text {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.nav-list {
-    display: flex;
-    list-style: none;
-    gap: 20px;
-}
-
-.nav-link {
-    text-decoration: none;
-    color: var(--text-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-link:hover {
-    color: var(--primary-color);
-}
-
-/* --- Блок 1: Hero Section --- */
-.hero-section {
-    background-color: var(--bg-light);
-    padding: 60px 0;
-}
-
-.hero-container {
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.hero-content {
-    flex: 1;
-}
-
-.hero-content p {
-    font-size: 1.1rem;
-    margin-bottom: 25px;
-}
-
-.hero-image {
-    flex: 1;
-}
-
-.hero-image img {
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* --- Блок 2: О нас / Преимущества --- */
-.about-section {
-    padding: 60px 0;
-}
-
-.features-grid {
-    display: flex;
-    gap: 30px;
-    justify-content: space-between;
-}
-
-.feature-card {
-    flex: 1;
-    text-align: center;
-    padding: 25px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    background-color: var(--white);
-}
-
-.feature-card img {
-    width: 64px;
-    height: 64px;
-    margin: 0 auto 15px auto;
-}
-
-/* --- Блок 3: Каталог --- */
-.products-section {
-    background-color: var(--bg-light);
-    padding: 60px 0;
-}
-
-.products-grid {
-    display: flex;
-    gap: 30px;
-}
-
-.product-card {
-    flex: 1;
-    background-color: var(--white);
-    border-radius: 8px;
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    flex-direction: column;
-}
-
-.product-card img {
-    border-radius: 6px;
-    margin-bottom: 15px;
-    height: 200px;
+/* Вспомогательные свойства для адаптивных изображений */
+.object-fit-cover {
     object-fit: cover;
-    width: 100%;
-}
-
-.product-card p {
-    font-size: 0.95rem;
-    margin-bottom: 15px;
-    flex-grow: 1;
-}
-
-.price {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-/* --- Блок 4: Форма контактов --- */
-.contact-section {
-    padding: 60px 0;
-}
-
-.contact-container {
-    max-width: 600px;
-    text-align: center;
-}
-
-.contact-container p {
-    margin-bottom: 30px;
-}
-
-.contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    text-align: left;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-
-.form-group label {
-    font-weight: bold;
-    font-size: 0.9rem;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    font-family: inherit;
-    font-size: 1rem;
-}
-
-.form-group input:focus,
-.form-group textarea:focus {
-    outline: none;
-    border-color: var(--primary-color);
-}
-
-.btn-submit {
-    width: 100%;
-}
-
-/* --- Подвал (Footer) --- */
-.footer {
-    background-color: #1e3a20;
-    color: var(--white);
-    padding: 25px 0;
-    text-align: center;
-    font-size: 0.9rem;
-}
-
-.footer-container p {
-    margin: 5px 0;
-}
-
-/* --- Адаптивность (Responsive design) --- */
-
-/* Мобильные устройства (до 768px, включая target 375px) */
-@media (max-width: 768px) {
-    .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .nav-list {
-        gap: 12px;
-        font-size: 0.9rem;
-    }
-
-    .hero-container {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    h1 {
-        font-size: 1.8rem;
-    }
-
-    .features-grid,
-    .products-grid {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    .feature-card,
-    .product-card {
-        width: 100%;
-    }
-}
-
-/* Десктопная адаптация под 1280px */
-@media (min-width: 1280px) {
-    .container {
-        max-width: 1280px;
-    }
 }
