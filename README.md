@@ -1,4 +1,4 @@
-# Landing Page — EcoLife (Экотовары)
+ # Landing Page — EcoLife (Экотовары)
 
 ## Автор
 **Имя:** Дана Кармантаева (Karmantaeva Dana)  
